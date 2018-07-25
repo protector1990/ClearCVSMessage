@@ -5,7 +5,9 @@
   <vendor email="protector1990@gmail.com" url="https://github.com/protector1990">Marko Tanic</vendor>
 
   <description>
-      Plugin that clears commit message from commit window after a successful commit. This behaviour is consistent with Tortoise tools.
+      Plugin that clears commit message from commit window after a successful commit.
+	  
+	  After installation, plugin will be enabled by default. To toggle it on and off, use VCS (menu) -> Clear message on successful commit
   </description>
 
   <change-notes>
