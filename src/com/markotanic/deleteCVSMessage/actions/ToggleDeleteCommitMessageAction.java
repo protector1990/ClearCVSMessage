@@ -11,8 +11,7 @@ public class ToggleDeleteCommitMessageAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent anActionEvent) {
-        DeleteMessageSettingsComponent c = anActionEvent.getProject().getComponent(DeleteMessageSettingsComponent.class);
-        c.toggleDeleteMessage();
+        DeleteMessageSettingsComponent.getInstance().toggleDeleteMessage();
     }
 
     @Override

@@ -14,7 +14,7 @@ public class DeleteMessageCheckInHandlerFactory extends CheckinHandlerFactory {
     @NotNull
     @Override
     public CheckinHandler createHandler(@NotNull CheckinProjectPanel checkinProjectPanel, @NotNull CommitContext commitContext) {
-        if (checkinProjectPanel.getProject().getComponent(DeleteMessageSettingsComponent.class).getDeleteMessageEnabled()) {
+        if (DeleteMessageSettingsComponent.getInstance().getDeleteMessageEnabled()) {
             return new DeleteMessageCheckInHandler(VcsConfiguration.getInstance(checkinProjectPanel.getProject()));
         }
         else {

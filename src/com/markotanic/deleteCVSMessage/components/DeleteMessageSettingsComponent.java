@@ -7,29 +7,43 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 @State(name = "delete-commit-messages-endabled", storages = {
-        @Storage("DeleteCommitMessageSettings.xml")
+        @Storage("deleteCommitMessage.xml")
 })
-public class DeleteMessageSettingsComponent implements PersistentStateComponent<DeleteMessageSettingsComponent> {
-    public boolean deleteMessageOnCommit = true;
+public class DeleteMessageSettingsComponent implements PersistentStateComponent<DeleteMessageState> {
+    private DeleteMessageState state;
 
-
-    public void toggleDeleteMessage() {
-        deleteMessageOnCommit = !deleteMessageOnCommit;
+    private static DeleteMessageSettingsComponent instance;
+    public static DeleteMessageSettingsComponent getInstance() {
+        return instance;
     }
 
+    public DeleteMessageSettingsComponent() {
+        instance = this;
+    }
+
+    public void toggleDeleteMessage() {
+        state.shouldDelete = !state.shouldDelete;
+    }
 
     public boolean getDeleteMessageEnabled() {
-        return deleteMessageOnCommit;
+        return state.shouldDelete;
     }
 
     @Nullable
     @Override
-    public DeleteMessageSettingsComponent getState() {
-        return this;
+    public DeleteMessageState getState() {
+        return state;
     }
 
     @Override
-    public void loadState(@NotNull DeleteMessageSettingsComponent var1) {
-        this.deleteMessageOnCommit = var1.deleteMessageOnCommit;
+    public void loadState(@NotNull DeleteMessageState state) {
+        this.state = state;
+    }
+
+    @Override
+    public void noStateLoaded() {
+        if (state == null) {
+            state = new DeleteMessageState();
+        }
     }
 }
