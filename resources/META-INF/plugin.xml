@@ -26,10 +26,24 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
+        <checkinHandlerFactory implementation="com.markotanic.deleteCVSMessage.DeleteMessageCheckInHandlerFactory"/>
   </extensions>
+
+    <project-components>
+        <component>
+            <interface-class>com.markotanic.deleteCVSMessage.components.DeleteMessageSettingsComponent</interface-class>
+            <implementation-class>com.markotanic.deleteCVSMessage.components.DeleteMessageSettingsComponent</implementation-class>
+        </component>
+    </project-components>
 
   <actions>
     <!-- Add your actions here -->
+      <action id="com.markotanic.deleteCVSMessage.actions.ToggleDeleteCommitMessageAction"
+              class="com.markotanic.deleteCVSMessage.actions.ToggleDeleteCommitMessageAction"
+              text="Delete message on successful commit"
+              description="Set wheather commit message should be cleared on successful commit from the commit window">
+          <add-to-group group-id="VcsGroups" anchor="last"/>
+      </action>
   </actions>
 
 </idea-plugin>
