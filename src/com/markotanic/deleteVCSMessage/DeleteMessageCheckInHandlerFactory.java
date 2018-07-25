@@ -1,13 +1,11 @@
-package com.markotanic.deleteCVSMessage;
+package com.markotanic.deleteVCSMessage;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.CheckinProjectPanel;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsConfiguration;
 import com.intellij.openapi.vcs.changes.CommitContext;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
-import com.markotanic.deleteCVSMessage.components.DeleteMessageSettingsComponent;
+import com.markotanic.deleteVCSMessage.components.DeleteMessageSettingsComponent;
 import org.jetbrains.annotations.NotNull;
 
 public class DeleteMessageCheckInHandlerFactory extends CheckinHandlerFactory {

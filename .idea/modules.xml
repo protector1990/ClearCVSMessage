@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ClearCVSMessage.iml" filepath="$PROJECT_DIR$/ClearCVSMessage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClearVCSMessage.iml" filepath="$PROJECT_DIR$/ClearVCSMessage.iml" />
     </modules>
   </component>
 </project>

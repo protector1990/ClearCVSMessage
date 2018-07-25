@@ -26,22 +26,22 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
-        <checkinHandlerFactory implementation="com.markotanic.deleteCVSMessage.DeleteMessageCheckInHandlerFactory"/>
+        <checkinHandlerFactory implementation="com.markotanic.deleteVCSMessage.DeleteMessageCheckInHandlerFactory"/>
   </extensions>
 
     <application-components>
         <component>
-            <interface-class>com.markotanic.deleteCVSMessage.components.DeleteMessageSettingsComponent</interface-class>
-            <implementation-class>com.markotanic.deleteCVSMessage.components.DeleteMessageSettingsComponent</implementation-class>
+            <interface-class>com.markotanic.deleteVCSMessage.components.DeleteMessageSettingsComponent</interface-class>
+            <implementation-class>com.markotanic.deleteVCSMessage.components.DeleteMessageSettingsComponent</implementation-class>
         </component>
     </application-components>
 
   <actions>
     <!-- Add your actions here -->
-      <action id="com.markotanic.deleteCVSMessage.actions.ToggleDeleteCommitMessageAction"
-              class="com.markotanic.deleteCVSMessage.actions.ToggleDeleteCommitMessageAction"
-              text="Delete message on successful commit"
-              description="Set wheather commit message should be cleared on successful commit from the commit window">
+      <action id="com.markotanic.deleteVCSMessage.actions.ToggleDeleteCommitMessageAction"
+              class="com.markotanic.deleteVCSMessage.actions.ToggleDeleteCommitMessageAction"
+              text="Clear message on successful commit"
+              description="If enabled, commit message will be cleared from the commit window after a successful commit.">
           <add-to-group group-id="VcsGroups" anchor="last"/>
       </action>
   </actions>

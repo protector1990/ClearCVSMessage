@@ -1,7 +1,5 @@
-package com.markotanic.deleteCVSMessage;
+package com.markotanic.deleteVCSMessage;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.CheckinProjectPanel;
 import com.intellij.openapi.vcs.VcsConfiguration;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 
