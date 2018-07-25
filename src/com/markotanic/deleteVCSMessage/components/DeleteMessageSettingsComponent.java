@@ -14,7 +14,7 @@ import java.util.function.Consumer;
         @Storage("deleteCommitMessage.xml")
 })
 public class DeleteMessageSettingsComponent implements PersistentStateComponent<DeleteMessageState> {
-    private DeleteMessageState state;
+    private DeleteMessageState state = new DeleteMessageState();
     private List<Consumer<Boolean>> stateChangeObservers = new ArrayList<>(1);
 
     private static DeleteMessageSettingsComponent instance;
@@ -60,13 +60,5 @@ public class DeleteMessageSettingsComponent implements PersistentStateComponent<
     public synchronized void loadState(@NotNull DeleteMessageState state) {
         this.state = state;
         notifyObservers();
-    }
-
-    @Override
-    public synchronized void noStateLoaded() {
-        if (state == null) {
-            state = new DeleteMessageState();
-            notifyObservers();
-        }
     }
 }
