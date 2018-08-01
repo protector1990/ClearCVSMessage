@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.markotanic.deleteVCSMessage</id>
   <name>Clear VCS message on commit</name>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <vendor email="protector1990@gmail.com" url="https://github.com/protector1990">Marko Tanic</vendor>
 
   <description>
@@ -11,11 +11,14 @@
   </description>
 
   <change-notes>
-      Initial version
+      Added compatibility for other Intellij platform IDEs.
   </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="145.2070.6"/>
+
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.vcs</depends>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
